@@ -38,8 +38,11 @@ app.use("/api/auth", authRoutes);
 app.use("/api/shops", shopRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
-
+ 
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({ error: "Not Found" });
 });
+
+// ✅ Vercel ke liye module export
+module.exports = app;
